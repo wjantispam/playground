@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # The declare or typeset builtins, which are exact synonyms!
-#   
-
+#  The declare command can be helpful in identifying variables, environmental or otherwise.  
+#  Here is a summary of its goodness
 # -r : readonly
 # -i : integer, integer declaration eliminates the need for 'let'.
 # -a : array
@@ -33,6 +33,13 @@ echo
 declare -x var3
 var3="this is now exported"
 
+# ======== demo to use declare to identify varilables =======
+declare | grep HOME
+zzy=68
+declare | grep zzy
+Colors=([0]="purple" [1]="reddish-orange" [2]="light green")
+echo "${Colors[*]}"
+declare | grep Colors
 
 
 exit 0
