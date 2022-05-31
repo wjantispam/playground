@@ -13,7 +13,29 @@
 #  [% LINKEDIN %]
 #
 
+# Bash 4.3 and older chokes on empty arrays with set -u.
 set -euo pipefail
+
+#### Useful Functions not sourced from my own library
+# Assert that command dependencies are installed
+#  $ require nampstatus # If you don't have this tool then exit!
+require() { 
+    if ! [ -x "$(command -v "$@")" ]; then
+        echo "$@ is available and executable"
+    else
+        echo "Unable to find $@, Exiting ..."
+        exit 69
+    fi
+}
+
+println() { printf '%s\n' "$*"; }
+tmpfile="$(mktemp -t myprog-XXXXXX)"
+cleanup() { rm -f "$tmpfile"; }
+trap cleanup EXIT # always cleanup the tmp file on exit
+
+require println
+require cleanup
+
 [ -n "${DEBUG:-}" ] && set -x
 srcdir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
@@ -59,3 +81,5 @@ if [ -z "$host" ]; then
 elif [ -z "$port" ]; then
     usage "--port not defined"
 fi
+
+exit 0
