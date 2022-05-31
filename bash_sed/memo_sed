@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+echo "Instead of s/REPLACE/WITH/ , you can put any delimiter after s,
+    e.g. s|REPLACE|WITH|, s:REPLACE:WITH:"
+printf "%s" "/home/jianwei/project/" | sed 's|/home/jianwei/|/tmp/wj/|'
