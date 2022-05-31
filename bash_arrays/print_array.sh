@@ -2,6 +2,7 @@
 # Why we should use ${array[*]}
 # Ref:  https://stackoverflow.com/questions/55149641/best-practice-print-an-array-in-a-bash-script
 #    
+# shellcheck disable=SC2145
 declare -a  deleted
 deleted=("some.id.1" "some.id.22" "some.id.333")
 echo "There is no difference in echo but printf is a problem!"
