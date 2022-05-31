@@ -1,0 +1,16 @@
+P: Extracting ncurses-bin
+P: Extracting ncurses-base
+Selecting previously unselected package dpkg.
+dpkg: regarding .../dpkg_1.20.9_amd64.deb containing dpkg, pre-dependency problem:
+ dpkg pre-depends on libbz2-1.0
+  libbz2-1.0 is not installed.
+
+dpkg: warning: ignoring pre-dependency problem!
+dpkg: regarding .../dpkg_1.20.9_amd64.deb containing dpkg, pre-dependency problem:
+ dpkg pre-depends on libc6 (>= 2.15)
+  libc6 is not installed.
+
+dpkg: warning: ignoring pre-dependency problem!
+dpkg: regarding .../dpkg_1.20.9_amd64.deb containing dpkg, pre-dependency problem:
+ dpkg pre-depends on liblzma5 (>= 5.2.2)
+  liblzma5 is not installed.
