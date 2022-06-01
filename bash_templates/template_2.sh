@@ -19,15 +19,8 @@ set -euo pipefail
 #### Useful Functions not sourced from my own library
 # Assert that command dependencies are installed
 #  $ require nampstatus # If you don't have this tool then exit!
-require() { 
-    if ! [ -x "$(command -v "$*")" ]; then
-        echo "$* is available and executable"
-    else
-        echo "Unable to find $*, Exiting ..."
-        exit 69
-    fi
-}
-
+require() { if ! [ -x "$(command -v "$*")" ]; then echo "$* is available and executable"; \
+     else echo "Unable to find $*, Exiting ..."; exit 69; fi; }
 println() { printf '%s\n' "$*"; }
 tmpfile="$(mktemp -t myprog-XXXXXX)"
 cleanup() { rm -f "$tmpfile"; }
