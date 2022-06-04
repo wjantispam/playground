@@ -25,11 +25,11 @@ Creating symbloic link: to be safe always use `ln -snf real_path new_name`. `-f`
 
 Removing a file: using `rm -f example.txt` so it is fine even when the example.txt doesn't exist.
 
-
+Reference the script: It is safter with `${BASH_SOURCE:-$0}`, to find out the difference btween BASH_SOURCE and `$0` see here https://stackoverflow.com/questions/35006457/choosing-between-0-and-bash-source
 
 Creating an empty file: touch example.txt
 
-files=(
+files=((1024)
     a
     b
 )
